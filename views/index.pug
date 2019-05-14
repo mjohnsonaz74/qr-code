@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  // button to Open App to specific screen for existing app users
+  form(action='youtube://', target='_blank')
+    input(type='submit', value='Open YouTube')
