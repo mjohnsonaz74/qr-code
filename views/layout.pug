@@ -33,7 +33,6 @@ html
       window.onload = function () {
         if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
           try {
-            alert('Device: ' + parser.getDevice().type + ' OS: ' + parser.getOS().name + ' Browser: ' + parser.getBrowser().name);
             if (os.toLowerCase() === 'ios') {
               window.location.href = iosName + '://';
             }
