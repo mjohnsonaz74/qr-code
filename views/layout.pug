@@ -41,7 +41,7 @@ html
             }
           } catch (e) {
             if (os.toLowerCase() === 'ios'){
-              alert(e);
+              alert(e + 'Navigating to: ' + getStoreURLiOS(iosName, iosId));
               window.location.href = getStoreURLiOS(iosName, iosId);
             }
             if(os.toLowerCase() === 'android') {
