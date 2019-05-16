@@ -39,6 +39,7 @@ html
               window.location.href = androidName + '://';
             }
             setTimeout(function () {
+              alert('timeout fired: ' + getStoreURLiOS(iosName, iosId));
               if (os.toLowerCase() === 'ios') {
                 window.location.href = getStoreURLiOS(iosName, iosId);
               }
