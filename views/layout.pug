@@ -30,30 +30,36 @@ html
         return appId ? (baseurl + appId) : null;
       }
 
-      window.onload = function () {
-        if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
-          try {
-            if (os.toLowerCase() === 'ios') {
-              window.location = iosName + '://';
-            }
-            if (os.toLowerCase() === 'android') {
-              window.location = androidName + '://';
-            }
-          } catch(e) {
-            alert('error caught: ' + e);
-          }
-          setTimeout(function () {
-            alert('timeout fired: ' + getStoreURLiOS(iosName, iosId));
-            if (os.toLowerCase() === 'ios') {
-              window.location = getStoreURLiOS(iosName, iosId);
-            }
-            if (os.toLowerCase() === 'android') {
-              window.location = getStoreURLAndroid(androidId);
-            }
-          }, 500);
-        } else {
-          window.location = 'https://spectrum.net';
-        }
-      }
+      window.location = 'mybhn://'; // will result in error message if app not installed
+      setTimeout(function () {
+        // Link to the App Store should go here -- only fires if deep link fails
+        window.location = "https://itunes.apple.com/us/app/mybhn/id942608209?ls=1&mt=8";
+      }, 500);
+
+      // window.onload = function () {
+      //   if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
+      //     try {
+      //       if (os.toLowerCase() === 'ios') {
+      //         window.location = iosName + '://';
+      //       }
+      //       if (os.toLowerCase() === 'android') {
+      //         window.location = androidName + '://';
+      //       }
+      //     } catch(e) {
+      //       alert('error caught: ' + e);
+      //     }
+      //     setTimeout(function () {
+      //       alert('timeout fired: ' + getStoreURLiOS(iosName, iosId));
+      //       if (os.toLowerCase() === 'ios') {
+      //         window.location = getStoreURLiOS(iosName, iosId);
+      //       }
+      //       if (os.toLowerCase() === 'android') {
+      //         window.location = getStoreURLAndroid(androidId);
+      //       }
+      //     }, 500);
+      //   } else {
+      //     window.location = 'https://spectrum.net';
+      //   }
+      // }
   body
     block content
