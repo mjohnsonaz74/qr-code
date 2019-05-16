@@ -33,7 +33,11 @@ html
         return true;
       }
       window.onload = function () {
-        open("mybhn://");
+        var frame = document.createElement('iframe');
+        frame.src = 'mybhn://';
+        frame.style.display = 'none';
+        document.body.appendChild(frame);
+        // open("mybhn://");
       //   <!-- Deep link URL for existing users with app already installed on their device -->
       //   window.location = 'youtube://';
       //   <!-- Download URL (TUNE link) for new users to download the app -->
