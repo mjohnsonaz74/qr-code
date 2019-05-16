@@ -20,18 +20,14 @@ html
       //     appId: "com.spectrum.myspectrum"
       //   }
       // });
-
+      var parser = new UAParser();
       window.onload = function () {
         try {
+          alert(parser.getResult());
           window.location.href = "mybhn://";
         } catch (e) {
           alert(e);
         }
-        // open("mybhn://");
-      //   <!-- Deep link URL for existing users with app already installed on their device -->
-      //   window.location = 'youtube://';
-      //   <!-- Download URL (TUNE link) for new users to download the app -->
-      //   setTimeout("window.location = 'https://spectrum.net';", 1000);
       }
   body
     block content
