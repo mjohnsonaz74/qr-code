@@ -24,7 +24,7 @@ html
       var parser = new UAParser();
       window.onload = function () {
         try {
-          alert('Device: ' + parser.getDevice() + ' OS: ' + parser.getOS() + ' Browser: ' + parser.getBrowser());
+          alert('Device: ' + parser.getDevice().type + ' OS: ' + parser.getOS().name + ' Browser: ' + parser.getBrowser().name);
           window.location.href = "mybhn://";
         } catch (e) {
           alert(e);
