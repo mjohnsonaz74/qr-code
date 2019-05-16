@@ -21,8 +21,14 @@ html
           appId: "com.spectrum.myspectrum"
         }
       });
+      var open = function (uri) {
+        iframe.src = uri;
+        document.body.appendChild(iframe);
+
+        return true;
+      }
       window.onload = function () {
-        deeplink.open("mybhn://com.spectrum.myspectrum");
+        open("mybhn://");
       //   <!-- Deep link URL for existing users with app already installed on their device -->
       //   window.location = 'youtube://';
       //   <!-- Download URL (TUNE link) for new users to download the app -->
