@@ -12,22 +12,45 @@ html
       }
     script(src='/js/ua-parser.min.js', type='text/javascript')
     script.
-      // deeplink.setup({
-      //   iOS: {
-      //     appName: "mybhn",
-      //     appId: "942608209",
-      //   },
-      //   android: {
-      //     appId: "com.spectrum.myspectrum"
-      //   }
-      // });
       var parser = new UAParser();
+      var device = parser.getDevice().type;
+      var os = parser.getOS().name
+      var iosName = 'mybhn';
+      var iosId = 942608209;
+      var androidName = 'myspectrum';
+      var androidId = 'com.spectrum.myspectrum';
+
+      var getStoreURLiOS = function (appName, appId) {
+        var baseurl = "itms-apps://itunes.apple.com/app/";
+        return (id && name) ? (baseurl + appName + "/id" + appId + "?mt=8") : null;
+      }
+
+      var getStoreURLAndroid = function (appId) {
+        var baseurl = "market://details?id=";
+        return appId ? (baseurl + appId) : null;
+      }
+
       window.onload = function () {
-        try {
-          alert('Device: ' + parser.getDevice().type + ' OS: ' + parser.getOS().name + ' Browser: ' + parser.getBrowser().name);
-          window.location.href = "mybhn://";
-        } catch (e) {
-          alert(e);
+        if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
+          try {
+            alert('Device: ' + parser.getDevice().type + ' OS: ' + parser.getOS().name + ' Browser: ' + parser.getBrowser().name);
+            if (os.toLowerCase() === 'ios') {
+              window.location.href = iosName + '://';
+            }
+            if (os.toLowerCase() === 'android') {
+              window.location.href = androidName + '://';
+            }
+          } catch (e) {
+            if (os.toLowerCase() === 'ios'){
+              alert(e);
+              window.location.href = getStoreURLiOS(iosName, iosId);
+            }
+            if(os.toLowerCase() === 'android') {
+              window.location.href = getStoreURLAndroid(androidId);
+            }
+          }
+        } else {
+          window.location.href = 'https://spectrum.net';
         }
       }
   body
