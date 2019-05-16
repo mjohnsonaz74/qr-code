@@ -32,23 +32,27 @@ html
 
       window.onload = function () {
         if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
+          try {
             if (os.toLowerCase() === 'ios') {
-              window.location.href = iosName + '://';
+              window.location = iosName + '://';
             }
             if (os.toLowerCase() === 'android') {
-              window.location.href = androidName + '://';
+              window.location = androidName + '://';
             }
-            setTimeout(function () {
-              alert('timeout fired: ' + getStoreURLiOS(iosName, iosId));
-              if (os.toLowerCase() === 'ios') {
-                window.location.href = getStoreURLiOS(iosName, iosId);
-              }
-              if (os.toLowerCase() === 'android') {
-                window.location.href = getStoreURLAndroid(androidId);
-              }
+          } catch(e) {
+            alert('error caught: ' + e);
+          }
+          setTimeout(function () {
+            alert('timeout fired: ' + getStoreURLiOS(iosName, iosId));
+            if (os.toLowerCase() === 'ios') {
+              window.location = getStoreURLiOS(iosName, iosId);
+            }
+            if (os.toLowerCase() === 'android') {
+              window.location = getStoreURLAndroid(androidId);
+            }
           }, 500);
         } else {
-          window.location.href = 'https://spectrum.net';
+          window.location = 'https://spectrum.net';
         }
       }
   body
