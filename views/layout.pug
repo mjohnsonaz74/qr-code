@@ -24,7 +24,7 @@ html
       var parser = new UAParser();
       window.onload = function () {
         try {
-          alert(JSON.stringify(parser.getResult(), null, '\t'));
+          alert('Device: ' + parser.getDevice() + ' OS: ' + parser.getOS() + ' Browser: ' + parser.getBrowser());
           window.location.href = "mybhn://";
         } catch (e) {
           alert(e);
