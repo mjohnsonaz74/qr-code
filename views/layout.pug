@@ -16,7 +16,7 @@ html
       var device = parser.getDevice().type;
       var os = parser.getOS().name
 
-      if (device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
+      if (device && (device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet')) {
         if (os.toLowerCase() === 'ios') {
           window.location = 'mybhn://'; // will result in error message if app not installed
           setTimeout(function () {
