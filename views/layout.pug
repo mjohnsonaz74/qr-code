@@ -31,6 +31,22 @@ html
       }
 
       window.onload = function () {
+        var xhr = new XMLHttpRequest();
+
+        // xhr.onreadystatechange = function () {
+        //   if (xhr.readyState == 4 && xhr.status == 200) {
+        //     window.location.href = iosName + '://';
+        //   }
+        // }
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            alert('xhr.readyState: ' + xhr.status);
+          }
+        }
+
+        xhr.open('head', iosName + '://');
+        xhr.send(null);
+
         if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
           try {
             if (os.toLowerCase() === 'ios') {
