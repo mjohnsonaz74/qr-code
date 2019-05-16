@@ -32,23 +32,20 @@ html
 
       window.onload = function () {
         if(device.toLowerCase() === 'mobile' || device.toLowerCase() === 'tablet') {
-          try {
             if (os.toLowerCase() === 'ios') {
               window.location.href = iosName + '://';
             }
             if (os.toLowerCase() === 'android') {
               window.location.href = androidName + '://';
             }
-          } catch (e) {
-            alert('MJ error: ' + e);
-            if (os.toLowerCase() === 'ios'){
-              alert(e + 'Navigating to: ' + getStoreURLiOS(iosName, iosId));
-              window.location.href = getStoreURLiOS(iosName, iosId);
-            }
-            if(os.toLowerCase() === 'android') {
-              window.location.href = getStoreURLAndroid(androidId);
-            }
-          }
+            setTimeout(function () {
+              if (os.toLowerCase() === 'ios') {
+                window.location.href = getStoreURLiOS(iosName, iosId);
+              }
+              if (os.toLowerCase() === 'android') {
+                window.location.href = getStoreURLAndroid(androidId);
+              }
+          }, 500);
         } else {
           window.location.href = 'https://spectrum.net';
         }
