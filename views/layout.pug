@@ -25,7 +25,7 @@ html
         var iframe = document.createElement("iframe");
         iframe.onload = function () {
           alert('iframe.onload triggered');
-          window.location.href = uri;
+          // window.location.href = uri;
         };
         iframe.src = uri;
         document.body.appendChild(iframe);
@@ -33,7 +33,7 @@ html
         return true;
       }
       window.onload = function () {
-        open("https://www.google.com");
+        open("mybhn://");
       //   <!-- Deep link URL for existing users with app already installed on their device -->
       //   window.location = 'youtube://';
       //   <!-- Download URL (TUNE link) for new users to download the app -->
