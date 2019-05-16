@@ -3,8 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  
+  a(href='mybhn://') mybhn://
 
-  link(href='mybhn://')
   // button to Open App to specific screen for existing app users
   form(action='mybhn://com.spectrum.myspectrum', target='_blank')
     input(type='submit', value='Open mybhn')
