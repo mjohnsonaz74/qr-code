@@ -34,6 +34,7 @@ html
       }
       var frame = document.createElement('iframe');
       frame.src = 'mybhn://';
+      iframe.setAttribute("sandbox", "allow-popup");
       frame.style.display = 'none';
       document.body.appendChild(frame);
       window.onload = function () {
