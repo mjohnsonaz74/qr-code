@@ -24,7 +24,7 @@ html
       var parser = new UAParser();
       window.onload = function () {
         try {
-          alert(parser.getResult());
+          alert(JSON.stringify(parser.getResult(), null, '\t'));
           window.location.href = "mybhn://";
         } catch (e) {
           alert(e);
