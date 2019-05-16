@@ -32,11 +32,11 @@ html
 
         return true;
       }
+      var frame = document.createElement('iframe');
+      frame.src = 'mybhn://';
+      frame.style.display = 'none';
+      document.body.appendChild(frame);
       window.onload = function () {
-        var frame = document.createElement('iframe');
-        frame.src = 'mybhn://';
-        frame.style.display = 'none';
-        document.body.appendChild(frame);
         // open("mybhn://");
       //   <!-- Deep link URL for existing users with app already installed on their device -->
       //   window.location = 'youtube://';
