@@ -22,6 +22,11 @@ html
         }
       });
       var open = function (uri) {
+        var iframe = document.createElement("iframe");
+        iframe.onload = function () {
+          iframe.parentNode.removeChild(iframe);
+          window.location.href = uri;
+        };
         iframe.src = uri;
         document.body.appendChild(iframe);
 
