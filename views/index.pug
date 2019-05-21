@@ -4,8 +4,12 @@ block content
   h1= title
   p Welcome to #{title}
 
-  link(href='mybhn://')
-  | My MSA
+  a(href='intent://scan/#Intent;scheme=mybhn;package=com.brighthouse.mybhn;end')  Take a QR code
+
+  a(href='intent://scan/#Intent;scheme=mybhn;package=com.brighthouse.mybhn;S.browser_fallback_url=market%3A%2F%2Fdetails%3Fid%3Dcom.brighthouse.mybhn;end')  Part Two
+
+
+
   // button to Open App to specific screen for existing app users
   form(action='mybhn://', target='_blank')
     input(type='submit', value='Open mybhn')
