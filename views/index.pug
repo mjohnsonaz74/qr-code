@@ -1,7 +1,10 @@
 extends layout
 
 block content
+  h1= title
+  p Welcome to #{title}
 
+  link(href='mybhn://') MSA
   // button to Open App to specific screen for existing app users
-  form(action='mybhn://', target='_self')
-    input(type='submit', value='Open MySpectrum')
+  form(action='mybhn://com.brighthouse.mybhn', target='_blank')
+    input(type='submit', value='Open mybhn')
