@@ -1,13 +1,6 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
 
-  a(href='intent://#Intent;scheme=mybhn;package=com.brighthouse.mybhndist;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.brighthouse.mybhn;end')  Part Two
+  a(href='intent://#Intent;scheme=mybhn;package=com.brighthouse.mybhndist;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.brighthouse.mybhn;end')  Open My Spectrum App
 
-
-
-  // button to Open App to specific screen for existing app users
-  form(action='mybhn://', target='_blank')
-    input(type='submit', value='Open mybhn')
